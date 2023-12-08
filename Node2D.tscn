@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenario1/abandonauts_assets/tiles.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://level1.gd" type="Script" id=5]
 [ext_resource path="res://Coin.gd" type="Script" id=6]
 [ext_resource path="res://scripts/Hud.gd" type="Script" id=7]
+[ext_resource path="res://scripts/ghosts.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
@@ -154,16 +155,19 @@ extents = Vector2( 846.5, 26 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 4.14201, 4.12213 )
 
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 16.375, 32.5 )
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Stage" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Stage"]
-margin_left = -769.0
-margin_top = 96.0
-margin_right = 1122.0
-margin_bottom = 689.0
+margin_left = -770.0
+margin_top = 76.0
+margin_right = 1121.0
+margin_bottom = 669.0
 color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 
 [node name="TileMap" type="TileMap" parent="Stage"]
@@ -224,6 +228,57 @@ position = Vector2( -711, 622 )
 position = Vector2( 233.5, 669 )
 shape = SubResource( 11 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -255, 471, -251, 475, -251, 479, -250, 479, -250, 473, -247, 472, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 385, -120 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 769, -72 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 961, -23 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 984, -23 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 696, 97 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 720, 97 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 744, 97 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 768, 97 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 792, 97 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 816, 96 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 840, 97 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Obstacles/Area2D"]
+position = Vector2( 840, 97 )
+polygon = PoolVector2Array( -262, 479, -262, 473, -260, 473, -259, 468, -255, 468, -246, 467, -251, 475, -251, 479, -250, 479, -250, 473, -241, 476, -247, 467, -242, 467, -242, 472, -240, 475, -240, 479 )
+
 [node name="Objects" type="Node2D" parent="."]
 position = Vector2( 0, -1 )
 
@@ -241,6 +296,23 @@ script = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Coin/Area2D"]
 position = Vector2( 0.197235, 0 )
 shape = SubResource( 12 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="ghosts" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -736, 563 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Enemies"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/StaticBody2D"]
+position = Vector2( -509, 569 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/StaticBody2D"]
+position = Vector2( -616, 569 )
+shape = SubResource( 13 )
 
 [connection signal="area_entered" from="Obstacles/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Objects/Coin/Area2D" to="Objects/Coin" method="_on_Area2D_area_entered"]

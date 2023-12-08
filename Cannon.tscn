@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://escenario1/abandonauts_assets/tiles.png" type="Texture" id=1]
+[ext_resource path="res://tank.gd" type="Script" id=2]
+[ext_resource path="res://scripts/fireball.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 27.074
+
+[node name="Cannon" type="Node2D"]
+
+[node name="tank" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="disk" type="CollisionShape2D" parent="tank"]
+position = Vector2( 2, 0 )
+shape = SubResource( 1 )
+
+[node name="cannon" type="ColorRect" parent="tank/disk"]
+margin_left = 2.0
+margin_top = -9.0
+margin_right = 51.0
+margin_bottom = 11.0
+color = Color( 0.00392157, 0.145098, 0.615686, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.00002, 1 )
+scale = Vector2( 3.65625, 3.6 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104.064, 8.28795, 16.0414, 15.3636 )
+
+[node name="fireball" parent="." instance=ExtResource( 3 )]
